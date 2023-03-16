@@ -12,7 +12,6 @@ const fetchBreedDescription = function (breedName, callback) {
     const breed = data[0];
 
     if (breed) {
-      console.log(breed.description);
       callback(null, breed.description);
     } else {
       callback('Breed Not Found', null);
@@ -20,19 +19,4 @@ const fetchBreedDescription = function (breedName, callback) {
   });
 };
 
-fetchBreedDescription('Siberian', (error, description) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log(description);
-    }
-});
-    fetchBreedDescription('InvalidBreed', (error, description) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(description);
-        }  
-  });
-
-
+module.exports ={ fetchBreedDescription };
